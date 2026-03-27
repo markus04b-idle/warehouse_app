@@ -1,0 +1,17 @@
+INSERT INTO inventory (sku, name, category, quantity, unit_price) VALUES
+    ('FW-001', 'Running Shoe Pro X',       'Footwear',      80,  129.99),
+    ('FW-002', 'Football Boot Striker',    'Footwear',      60,  109.99),
+    ('FW-003', 'Basketball High-Top',      'Footwear',      55,  139.99),
+    ('AP-001', 'Compression Shorts',       'Apparel',      200,   29.99),
+    ('AP-002', 'Training Jersey',          'Apparel',      180,   24.99),
+    ('AP-003', 'Tracksuit Set',            'Apparel',       70,   79.99),
+    ('BS-001', 'FIFA Pro Football',        'Ball Sports',   50,   44.99),
+    ('BS-002', 'NBA Replica Basketball',   'Ball Sports',   45,   54.99),
+    ('BS-003', 'Volleyball Club',          'Ball Sports',   40,   34.99),
+    ('RS-001', 'Tennis Racket Elite',      'Racket Sports', 30,   89.99),
+    ('RS-002', 'Badminton Shuttlecocks',   'Racket Sports', 120,  19.99),
+    ('FT-001', 'Adjustable Dumbbell 20kg', 'Fitness',       20,  169.99),
+    ('FT-002', 'Resistance Band Set',      'Fitness',      100,   21.99),
+    ('FT-003', 'Yoga & Fitness Mat',       'Fitness',       90,   34.99),
+    ('WS-001', 'Competition Goggles',      'Water Sports',  60,   27.99),
+    ('WS-002', 'Swim Kickboard',           'Water Sports',  75,   18.99);
