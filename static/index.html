@@ -1,1 +1,87 @@
-Future home of inventory app.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warehouse Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <span class="app-title">Warehouse Admin</span>
+      <span class="db-label">warehouse.db &rsaquo; inventory</span>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="toolbar">
+      <h2 class="table-title">Inventory</h2>
+      <button class="btn btn-primary" id="btn-new" onclick="openCreateModal()">
+        + New Record
+      </button>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="inventory-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="inventory-body">
+          <tr id="loading-row">
+            <td colspan="7" class="state-cell">Loading&hellip;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="status-bar" id="status-bar">&nbsp;</div>
+  </main>
+
+  <!-- Create / Edit Modal -->
+  <div class="modal-overlay" id="modal-overlay" hidden>
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title">New Record</span>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <form id="record-form" onsubmit="submitForm(event)">
+        <input type="hidden" id="field-id" />
+
+        <div class="form-grid">
+          <label for="field-sku">SKU</label>
+          <input type="text" id="field-sku" name="sku" required placeholder="e.g. WH-00123" />
+
+          <label for="field-name">Name</label>
+          <input type="text" id="field-name" name="name" required placeholder="Product name" />
+
+          <label for="field-category">Category</label>
+          <input type="text" id="field-category" name="category" required placeholder="e.g. Electronics" />
+
+          <label for="field-quantity">Quantity</label>
+          <input type="number" id="field-quantity" name="quantity" required min="0" placeholder="0" />
+
+          <label for="field-unit-price">Unit Price</label>
+          <input type="number" id="field-unit-price" name="unit_price" required min="0" step="0.01" placeholder="0.00" />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submit-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
